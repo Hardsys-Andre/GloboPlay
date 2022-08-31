@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		AC0F570928BD6AB80019A06A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F570828BD6AB80019A06A /* AppDelegate.swift */; };
 		AC0F570B28BD6AB80019A06A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F570A28BD6AB80019A06A /* SceneDelegate.swift */; };
-		AC0F570D28BD6AB80019A06A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F570C28BD6AB80019A06A /* ViewController.swift */; };
-		AC0F571028BD6AB80019A06A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0F570E28BD6AB80019A06A /* Main.storyboard */; };
 		AC0F571228BD6AB90019A06A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0F571128BD6AB90019A06A /* Assets.xcassets */; };
 		AC0F571528BD6AB90019A06A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0F571328BD6AB90019A06A /* LaunchScreen.storyboard */; };
+		AC0F571D28BD7A140019A06A /* FilmesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F571C28BD7A140019A06A /* FilmesViewController.swift */; };
+		ACC4B9D428BE58AE004A007A /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */; };
+		ACC4B9D628BE5A85004A007A /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4B9D528BE5A85004A007A /* CustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC0F570528BD6AB80019A06A /* GloboPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloboPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0F570828BD6AB80019A06A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC0F570A28BD6AB80019A06A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AC0F570C28BD6AB80019A06A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AC0F570F28BD6AB80019A06A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC0F571128BD6AB90019A06A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC0F571428BD6AB90019A06A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC0F571628BD6AB90019A06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC0F571C28BD7A140019A06A /* FilmesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesViewController.swift; sourceTree = "<group>"; };
+		ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		ACC4B9D528BE5A85004A007A /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 			children = (
 				AC0F570828BD6AB80019A06A /* AppDelegate.swift */,
 				AC0F570A28BD6AB80019A06A /* SceneDelegate.swift */,
-				AC0F570C28BD6AB80019A06A /* ViewController.swift */,
-				AC0F570E28BD6AB80019A06A /* Main.storyboard */,
 				AC0F571128BD6AB90019A06A /* Assets.xcassets */,
 				AC0F571328BD6AB90019A06A /* LaunchScreen.storyboard */,
 				AC0F571628BD6AB90019A06A /* Info.plist */,
+				AC0F571C28BD7A140019A06A /* FilmesViewController.swift */,
+				ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */,
+				ACC4B9D528BE5A85004A007A /* CustomView.swift */,
 			);
 			path = GloboPlay;
 			sourceTree = "<group>";
@@ -127,7 +130,6 @@
 			files = (
 				AC0F571528BD6AB90019A06A /* LaunchScreen.storyboard in Resources */,
 				AC0F571228BD6AB90019A06A /* Assets.xcassets in Resources */,
-				AC0F571028BD6AB80019A06A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +140,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC0F570D28BD6AB80019A06A /* ViewController.swift in Sources */,
+				ACC4B9D628BE5A85004A007A /* CustomView.swift in Sources */,
 				AC0F570928BD6AB80019A06A /* AppDelegate.swift in Sources */,
 				AC0F570B28BD6AB80019A06A /* SceneDelegate.swift in Sources */,
+				AC0F571D28BD7A140019A06A /* FilmesViewController.swift in Sources */,
+				ACC4B9D428BE58AE004A007A /* CustomCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AC0F570E28BD6AB80019A06A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC0F570F28BD6AB80019A06A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AC0F571328BD6AB90019A06A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,7 +287,6 @@
 				INFOPLIST_FILE = GloboPlay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,7 +313,6 @@
 				INFOPLIST_FILE = GloboPlay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
