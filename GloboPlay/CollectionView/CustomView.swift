@@ -11,7 +11,7 @@ class CustomView: UIView {
     
     lazy var imageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "Druid")
+        imageView.image = UIImage(named: "Kina")
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
