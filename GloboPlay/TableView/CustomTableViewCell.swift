@@ -10,75 +10,47 @@ import UIKit
 class CustomTableViewCell: UITableViewCell {
 
     static let identifier:String = "CustomTableViewCell"
-    
-   
-    lazy var collectionView:UICollectionView = {
-        /*let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout.init())
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .white
-        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
        
-        let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-        layout.scrollDirection = .horizontal
-        collectionView.setCollectionViewLayout(layout, animated: true)
-        layout.estimatedItemSize = .zero
-        collectionView.delegate = self
-        collectionView.dataSource = self*/
+    lazy var collectionView:UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isScrollEnabled = true
-        collectionView.backgroundColor = .yellow
+        collectionView.backgroundColor = .black
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
 
-        
-        
         return collectionView
-        
     }()
     
     lazy var labelTitulo:UILabel = {
         let titulo = UILabel()
-        titulo.text = "Novelas"
-        titulo.font = UIFont.boldSystemFont(ofSize: 40)
+        titulo.text = "Título"
+        titulo.font = UIFont.boldSystemFont(ofSize: 35)
         titulo.textColor = .white
-        titulo.backgroundColor = .blue
-        
         titulo.translatesAutoresizingMaskIntoConstraints = false
         
         return titulo
-
-}()
- 
+    }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    func configure(){
         self.addSubview(self.collectionView)
         self.backgroundColor = .black
         self.addSubview(labelTitulo)
         self.configConstraints()
         self.configLabelConstraints()
     }
-    
-    required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     private func configLabelConstraints(){
         NSLayoutConstraint.activate([
             self.labelTitulo.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
             self.labelTitulo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            self.labelTitulo.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
+            self.labelTitulo.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.labelTitulo.heightAnchor.constraint(equalToConstant: 50),
-        
         ])
     }
-    
-    
-    
     
     private func configConstraints(){
         NSLayoutConstraint.activate([
@@ -90,16 +62,12 @@ class CustomTableViewCell: UITableViewCell {
     }
 }
 
-
-
-
 extension CustomTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {        
         return 10
     }
 
@@ -108,6 +76,6 @@ extension CustomTableViewCell:UICollectionViewDelegate, UICollectionViewDataSour
         return cell ?? UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: 200, height: 230)
     }
 }

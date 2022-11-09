@@ -14,7 +14,6 @@
 		AC8204D828BF8F2F003BA601 /* FilmesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8204D728BF8F2F003BA601 /* FilmesTableView.swift */; };
 		AC8204DA28BF9D3B003BA601 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8204D928BF9D3B003BA601 /* CustomTableViewCell.swift */; };
 		ACC4B9D428BE58AE004A007A /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */; };
-		ACC4B9D628BE5A85004A007A /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4B9D528BE5A85004A007A /* CustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		AC8204D728BF8F2F003BA601 /* FilmesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesTableView.swift; sourceTree = "<group>"; };
 		AC8204D928BF9D3B003BA601 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
-		ACC4B9D528BE5A85004A007A /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */,
-				ACC4B9D528BE5A85004A007A /* CustomView.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -159,7 +156,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC4B9D628BE5A85004A007A /* CustomView.swift in Sources */,
 				AC0F570928BD6AB80019A06A /* AppDelegate.swift in Sources */,
 				AC0F570B28BD6AB80019A06A /* SceneDelegate.swift in Sources */,
 				AC8204DA28BF9D3B003BA601 /* CustomTableViewCell.swift in Sources */,
