@@ -11,7 +11,7 @@ class CustomView: UIView {
     
     lazy var imageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "Kina")
+        imageView.image = UIImage(named: "Druid")
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -22,7 +22,7 @@ class CustomView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(self.imageView)
-        self.backgroundColor = .black
+        self.backgroundColor = .green
         self.configConstraints()
     }
     required init(coder: NSCoder) {
