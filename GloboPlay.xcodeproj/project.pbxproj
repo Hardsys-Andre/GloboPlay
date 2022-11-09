@@ -11,6 +11,7 @@
 		AC0F570B28BD6AB80019A06A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F570A28BD6AB80019A06A /* SceneDelegate.swift */; };
 		AC0F571228BD6AB90019A06A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0F571128BD6AB90019A06A /* Assets.xcassets */; };
 		AC0F571528BD6AB90019A06A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0F571328BD6AB90019A06A /* LaunchScreen.storyboard */; };
+		AC466E4D291C469B008D26F8 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC466E4C291C469B008D26F8 /* MyTabBarController.swift */; };
 		AC8204D828BF8F2F003BA601 /* FilmesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8204D728BF8F2F003BA601 /* FilmesTableView.swift */; };
 		AC8204DA28BF9D3B003BA601 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8204D928BF9D3B003BA601 /* CustomTableViewCell.swift */; };
 		ACC4B9D428BE58AE004A007A /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */; };
@@ -23,6 +24,7 @@
 		AC0F571128BD6AB90019A06A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC0F571428BD6AB90019A06A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC0F571628BD6AB90019A06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC466E4C291C469B008D26F8 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		AC8204D728BF8F2F003BA601 /* FilmesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesTableView.swift; sourceTree = "<group>"; };
 		AC8204D928BF9D3B003BA601 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		AC0F570728BD6AB80019A06A /* GloboPlay */ = {
 			isa = PBXGroup;
 			children = (
+				AC466E4B291C4524008D26F8 /* TabBar */,
 				AC8204DE28BFFC12003BA601 /* TableView */,
 				AC8204DD28BFFBED003BA601 /* CollectionView */,
 				AC0F570828BD6AB80019A06A /* AppDelegate.swift */,
@@ -67,6 +70,14 @@
 				AC0F571628BD6AB90019A06A /* Info.plist */,
 			);
 			path = GloboPlay;
+			sourceTree = "<group>";
+		};
+		AC466E4B291C4524008D26F8 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AC466E4C291C469B008D26F8 /* MyTabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		AC8204DD28BFFBED003BA601 /* CollectionView */ = {
@@ -161,6 +172,7 @@
 				AC8204DA28BF9D3B003BA601 /* CustomTableViewCell.swift in Sources */,
 				ACC4B9D428BE58AE004A007A /* CustomCollectionViewCell.swift in Sources */,
 				AC8204D828BF8F2F003BA601 /* FilmesTableView.swift in Sources */,
+				AC466E4D291C469B008D26F8 /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

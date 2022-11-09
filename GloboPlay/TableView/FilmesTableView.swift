@@ -7,6 +7,11 @@
 
 import UIKit
 
+class MyTabBarController: UITabBarController {
+    
+    
+}
+
 class FilmesTableView: UIViewController{
     
     lazy var tableView: UITableView = {
@@ -24,6 +29,7 @@ class FilmesTableView: UIViewController{
         super.viewDidLoad()
         self.view.addSubview(self.tableView)
         self.configconstraints()
+        self.title = "GloboPlay"
     }
     
     private func configconstraints(){
