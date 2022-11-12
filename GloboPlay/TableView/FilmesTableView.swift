@@ -7,11 +7,6 @@
 
 import UIKit
 
-class MyTabBarController: UITabBarController {
-    
-    
-}
-
 class FilmesTableView: UIViewController{
     
     lazy var tableView: UITableView = {

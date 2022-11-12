@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let safeWindows = UIWindow(windowScene: windowScene)
         safeWindows.frame = UIScreen.main.bounds
-        safeWindows.rootViewController = MyTabBarController()
+        safeWindows.rootViewController = TabBarController()
         safeWindows.makeKeyAndVisible()
         
         window = safeWindows
