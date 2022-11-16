@@ -18,7 +18,7 @@ class CustomTableViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isScrollEnabled = true
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.0)
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -37,7 +37,7 @@ class CustomTableViewCell: UITableViewCell {
     
     func configure(){
         self.addSubview(self.collectionView)
-        self.backgroundColor = .black
+        self.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.8)
         self.addSubview(labelTitulo)
         self.configConstraints()
         self.configLabelConstraints()
@@ -45,7 +45,7 @@ class CustomTableViewCell: UITableViewCell {
 
     private func configLabelConstraints(){
         NSLayoutConstraint.activate([
-            self.labelTitulo.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            self.labelTitulo.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             self.labelTitulo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             self.labelTitulo.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.labelTitulo.heightAnchor.constraint(equalToConstant: 50),

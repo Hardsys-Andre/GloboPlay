@@ -11,9 +11,10 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     static let identifier:String = "CustomCollectionViewCell"
     
+    
     lazy var imageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "Druid")
+        imageView.image = UIImage(named: "cartaz")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
@@ -29,10 +30,10 @@ class CustomCollectionViewCell: UICollectionViewCell {
     }
     private func configConstraints(){
         NSLayoutConstraint.activate([
-            self.imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            self.imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            self.imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            self.imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
+            self.imageView.topAnchor.constraint(equalTo: self.topAnchor),
+            self.imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
     }
 }
