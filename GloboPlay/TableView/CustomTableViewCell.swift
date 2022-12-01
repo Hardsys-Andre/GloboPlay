@@ -35,12 +35,13 @@ class CustomTableViewCell: UITableViewCell {
         return titulo
     }()
     
-    func configure(){
+    func configure(titulo: String){
         self.addSubview(self.collectionView)
         self.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.8)
         self.addSubview(labelTitulo)
         self.configConstraints()
         self.configLabelConstraints()
+        labelTitulo.text = titulo
     }
 
     private func configLabelConstraints(){
