@@ -15,7 +15,6 @@ class DetalhesAssista: UIView {
         stack.axis = .vertical
         stack.distribution = .equalSpacing
         stack.spacing = 10
-        //stack.backgroundColor = .red
         stack.isLayoutMarginsRelativeArrangement = true
         
         return stack
@@ -81,8 +80,6 @@ class DetalhesAssista: UIView {
             fichaDetails.leadingAnchor.constraint(equalTo: leadingAnchor),
             fichaDetails.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            
         ])
     }
-    
 }

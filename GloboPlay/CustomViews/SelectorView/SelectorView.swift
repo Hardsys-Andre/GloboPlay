@@ -10,22 +10,14 @@ import UIKit
 protocol detalhesAssistaDelegate: AnyObject{
     func tappedAssista()
     func tappedDetalhes()
-
-}
-
-protocol barViewDelegate: AnyObject{
-func tappedBarSelected()
+    func tappedBarra()
+    func tappedBarraDetalhes()
 }
 
 class SelectorView: UIView {
     
-    private weak var delegateBar: barViewDelegate?
-    
     private weak var delegate: detalhesAssistaDelegate?
     
-    public func delegateBar(delegate: barViewDelegate?){
-        self.delegateBar = delegate
-    }
     
     public func delegate(delegate: detalhesAssistaDelegate?){
         self.delegate = delegate
@@ -52,7 +44,7 @@ class SelectorView: UIView {
     
     @objc func tappedAssistaTB(_ sender: UITapGestureRecognizer){
         delegate?.tappedAssista()
-        delegateBar?.tappedBarSelected()
+        delegate?.tappedBarra()
     }
     
     lazy var selectorAssistaLabel: UILabel = {
@@ -77,6 +69,7 @@ class SelectorView: UIView {
     
     @objc func tappedDetalhesExibir(_ sender: UITapGestureRecognizer){
         delegate?.tappedDetalhes()
+        delegate?.tappedBarraDetalhes()
     }
     
     lazy var selectorDetailsLabel: UILabel = {
@@ -97,17 +90,24 @@ class SelectorView: UIView {
         return view
     }()
     
+    lazy var barViewAssista: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        
+        return view
+    }()
+    
     var detalhesSelecionado = true
     
     init() {
         super.init(frame: .zero)
-        //delegateBar(delegate: self)
-        //self.detalhesSelecionado = detalhesSelecionado
         addSubview(selectorAssistaLabel)
         addSubview(selectorDetailsLabel)
         addSubview(barView)
+        addSubview(barViewAssista)
         addSubview(stackView)
-        //setSelected()
+        barViewAssista.isHidden = true
         buttomLeftView.addSubview(selectorAssistaLabel)
         buttomRightView.addSubview(selectorDetailsLabel)
         configConstraints()
@@ -118,9 +118,21 @@ class SelectorView: UIView {
     }
     
     func setSelected() {
-        detalhesSelecionado = false
-        
-        
+        if detalhesSelecionado {
+            barView.isHidden = true
+            barViewAssista.isHidden = false
+        }else{
+            return barView.isHidden = false
+        }
+    }
+    
+    func detalheSelected(){
+        if detalhesSelecionado {
+            barView.isHidden = false
+            barViewAssista.isHidden = true
+        }else{
+            return barView.isHidden = true
+        }
     }
     
     private func configConstraints(){
@@ -135,24 +147,17 @@ class SelectorView: UIView {
             
             self.selectorDetailsLabel.centerYAnchor.constraint(equalTo: buttomRightView.centerYAnchor),
             self.selectorDetailsLabel.leadingAnchor.constraint(equalTo: buttomRightView.leadingAnchor),
-        ])
         
-            if detalhesSelecionado == true {
-                NSLayoutConstraint.activate([
                 self.barView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 12),
                 self.barView.widthAnchor.constraint(equalToConstant: 120),
                 self.barView.heightAnchor.constraint(equalToConstant: 5),
-                self.barView.centerXAnchor.constraint(equalTo: selectorDetailsLabel.centerXAnchor)
-                ])
-            } else {
-                NSLayoutConstraint.activate([
-                self.barView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 12),
-                self.barView.widthAnchor.constraint(equalToConstant: 120),
-                self.barView.heightAnchor.constraint(equalToConstant: 5),
-                self.barView.centerXAnchor.constraint(equalTo: selectorAssistaLabel.centerXAnchor)
+                self.barView.centerXAnchor.constraint(equalTo: selectorDetailsLabel.centerXAnchor),
 
+                self.barViewAssista.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 12),
+                self.barViewAssista.widthAnchor.constraint(equalToConstant: 120),
+                self.barViewAssista.heightAnchor.constraint(equalToConstant: 5),
+                self.barViewAssista.centerXAnchor.constraint(equalTo: selectorAssistaLabel.centerXAnchor)
 
                 ])
-            }
     }
 }

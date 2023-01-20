@@ -7,9 +7,8 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController, detalhesAssistaDelegate, barViewDelegate {
-    
-        
+class DetailsViewController: UIViewController, detalhesAssistaDelegate {
+
     lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
@@ -136,12 +135,9 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate, barViewD
         let selector = SelectorView()
         selector.translatesAutoresizingMaskIntoConstraints = false
         
-        
         return selector
     }()
-    
-  
-    
+
     lazy var detalhesAssista: DetalhesAssista = {
         let view = DetalhesAssista()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -152,7 +148,6 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate, barViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         selectorView.delegate(delegate: self)
-        selectorView.delegateBar(delegate: self)
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(imageDetails)
@@ -171,44 +166,39 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate, barViewD
         self.scrollView.contentSize.height = self.contentView.frame.height
     }
     
-    func tappedBarSelected() {
-        print("sera???????")
-        let barView = SelectorView()
-        barView.detalhesSelecionado = false
-        
-        if
-            barView.detalhesSelecionado == false{
+    func tappedBarra() {
+        let barra = SelectorView()
+        barra.detalhesSelecionado = false
+        if barra.detalhesSelecionado == false{
             selectorView.setSelected()
         }
-        
     }
     
-    
+    func tappedBarraDetalhes() {
+        let barra = SelectorView()
+        barra.detalhesSelecionado = false
+        if barra.detalhesSelecionado == false{
+            selectorView.detalheSelected()
+        }
+    }
+
     func tappedAssista() {
         let detalheAssista = DetalhesAssista()
         detalheAssista.selecionar = true
         
-        if
-            detalheAssista.selecionar == true{
+        if detalheAssista.selecionar == true{
             detalhesAssista.click()
-
-
-            
         }
     }
     
     func tappedDetalhes() {
         let detalhe = DetalhesAssista()
         detalhe.selecionar = true
-        //let barView = selectorView
-        if
-            detalhe.selecionar == true{
+        
+        if detalhe.selecionar == true{
             detalhesAssista.clickDetalhes()
-            //barView.setSelected()
-            
         }
     }
-    
     
     private func configConstraints(){
         NSLayoutConstraint.activate([
@@ -268,5 +258,4 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate, barViewD
             
         ])
     }
-    
 }
