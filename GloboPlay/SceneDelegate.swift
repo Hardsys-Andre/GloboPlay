@@ -13,16 +13,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if #available(iOS 15, *){
-            UINavigationBar.appearance().scrollEdgeAppearance = UINavigationBarAppearance()
-        }
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().standardAppearance = appearance
+        
+        
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let safeWindows = UIWindow(windowScene: windowScene)
-        safeWindows.frame = UIScreen.main.bounds
-        safeWindows.rootViewController = DetailsViewController()
+        safeWindows.rootViewController = UINavigationController(rootViewController: TabBarController())
         safeWindows.makeKeyAndVisible()
-        
         window = safeWindows
     }
 

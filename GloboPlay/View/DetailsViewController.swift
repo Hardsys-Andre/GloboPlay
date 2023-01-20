@@ -7,10 +7,26 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
-
+class DetailsViewController: UIViewController, detalhesAssistaDelegate, barViewDelegate {
+    
+        
+    lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.backgroundColor = .black
+        scroll.isScrollEnabled = true
+        return scroll
+    }()
+    
+    let contentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     lazy var imageDetails: UIImageView = {
-    let image = UIImageView()
+        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "cartaz")
         
@@ -24,41 +40,233 @@ class DetailsViewController: UIViewController {
         label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textColor = .white
         
+        return label
+    }()
+    
+    lazy var subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Filme"
+        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.textColor = UIColor(white: 1, alpha: 0.5)
         
         return label
     }()
     
+    lazy var resumeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Ultimo filme da saga Vingadores\n onde os herois derrotam o vilão\n e salvam a humanidade mais \n uma vez"
+        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.textColor = UIColor(white: 1, alpha: 0.5)
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    lazy var buttomLeftView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 5
+        return view
+    }()
+    
+    lazy var playImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(systemName: "play.fill")
+        image.tintColor = .black
+        image.contentMode = .scaleAspectFit
+        image.translatesAutoresizingMaskIntoConstraints = false
+        
+        return image
+    }()
+    
+    lazy var nameButtomLeft: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Assista"
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        return label
+    }()
+    
+    lazy var buttomRightView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.borderColor = UIColor.white.cgColor
+        view.layer.borderWidth = 1
+        view.layer.cornerRadius = 5
+        
+        return view
+    }()
+    
+    lazy var starImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(systemName: "star.fill")
+        image.tintColor = .white
+        image.contentMode = .scaleAspectFit
+        image.translatesAutoresizingMaskIntoConstraints = false
+        
+        return image
+    }()
+    
+    lazy var nameButtomRight: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Minha Lista"
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        return label
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [buttomLeftView, buttomRightView])
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        stack.spacing = 10
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        
+        return stack
+    }()
+    
+    lazy var selectorView: SelectorView = {
+        let selector = SelectorView()
+        selector.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        return selector
+    }()
+    
+  
+    
+    lazy var detalhesAssista: DetalhesAssista = {
+        let view = DetalhesAssista()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
-        self.view.addSubview(imageDetails)
-        self.view.addSubview(titleLabel)
+        selectorView.delegate(delegate: self)
+        selectorView.delegateBar(delegate: self)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(imageDetails)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(subtitleLabel)
+        contentView.addSubview(resumeLabel)
+        contentView.addSubview(stackView)
+        contentView.addSubview(selectorView)
+        contentView.addSubview(detalhesAssista)
+        self.buttomLeftView.addSubview(nameButtomLeft)
+        self.buttomLeftView.addSubview(playImage)
+        self.buttomRightView.addSubview(nameButtomRight)
+        self.buttomRightView.addSubview(starImage)
         configConstraints()
-
+        contentView.layoutIfNeeded()
+        self.scrollView.contentSize.height = self.contentView.frame.height
     }
+    
+    func tappedBarSelected() {
+        print("sera???????")
+        let barView = SelectorView()
+        barView.detalhesSelecionado = false
+        
+        if
+            barView.detalhesSelecionado == false{
+            selectorView.setSelected()
+        }
+        
+    }
+    
+    
+    func tappedAssista() {
+        let detalheAssista = DetalhesAssista()
+        detalheAssista.selecionar = true
+        
+        if
+            detalheAssista.selecionar == true{
+            detalhesAssista.click()
+
+
+            
+        }
+    }
+    
+    func tappedDetalhes() {
+        let detalhe = DetalhesAssista()
+        detalhe.selecionar = true
+        //let barView = selectorView
+        if
+            detalhe.selecionar == true{
+            detalhesAssista.clickDetalhes()
+            //barView.setSelected()
+            
+        }
+    }
+    
     
     private func configConstraints(){
         NSLayoutConstraint.activate([
-            self.imageDetails.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
-            self.imageDetails.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            self.imageDetails.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 50),
+            self.imageDetails.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             self.imageDetails.heightAnchor.constraint(equalToConstant: 250),
             self.imageDetails.widthAnchor.constraint(equalToConstant: 180),
             
             self.titleLabel.topAnchor.constraint(equalTo: self.imageDetails.bottomAnchor, constant:20),
-            self.titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            //self.titleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
-            //self.titleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 50),
+            self.titleLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            self.titleLabel.heightAnchor.constraint(equalToConstant: 30),
+            
+            self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 20),
+            self.subtitleLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            self.subtitleLabel.heightAnchor.constraint(equalToConstant: 30),
+            
+            self.resumeLabel.topAnchor.constraint(equalTo: self.subtitleLabel.bottomAnchor, constant: 20),
+            self.resumeLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            
+            self.stackView.topAnchor.constraint(equalTo: self.resumeLabel.bottomAnchor, constant: 20),
+            self.stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
+            self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
+            self.stackView.heightAnchor.constraint(equalToConstant: 50),
+            
+            self.playImage.centerYAnchor.constraint(equalTo: self.buttomLeftView.centerYAnchor),
+            self.playImage.trailingAnchor.constraint(equalTo: self.nameButtomLeft.leadingAnchor, constant: -10),
+            self.playImage.heightAnchor.constraint(equalToConstant: 30),
+            self.playImage.widthAnchor.constraint(equalToConstant: 25),
+            
+            self.nameButtomLeft.centerYAnchor.constraint(equalTo: self.buttomLeftView.centerYAnchor),
+            self.nameButtomLeft.centerXAnchor.constraint(equalTo: self.buttomLeftView.centerXAnchor),
+            
+            self.starImage.centerYAnchor.constraint(equalTo: self.buttomRightView.centerYAnchor),
+            self.starImage.trailingAnchor.constraint(equalTo: self.nameButtomRight.leadingAnchor, constant: -5),
+            self.starImage.heightAnchor.constraint(equalToConstant: 30),
+            self.starImage.widthAnchor.constraint(equalToConstant: 25),
+            
+            self.nameButtomRight.centerYAnchor.constraint(equalTo: self.buttomRightView.centerYAnchor),
+            self.nameButtomRight.centerXAnchor.constraint(equalTo: self.buttomRightView.centerXAnchor),
+            
+            self.selectorView.topAnchor.constraint(equalTo: self.stackView.bottomAnchor, constant: 10),
+            self.selectorView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
+            self.selectorView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16),
+            self.selectorView.heightAnchor.constraint(equalToConstant: 80),
+            
+            self.detalhesAssista.topAnchor.constraint(equalTo: self.selectorView.bottomAnchor, constant: 20),
+            self.detalhesAssista.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 6),
+            self.detalhesAssista.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -6),
+            self.detalhesAssista.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
+            
         ])
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

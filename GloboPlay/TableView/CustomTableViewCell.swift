@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol CustomTableViewCellDelegate {
+    func filmeSelecionado()
+}
+
 class CustomTableViewCell: UITableViewCell {
 
     static let identifier:String = "CustomTableViewCell"
+    
+    var delegate: CustomTableViewCellDelegate?
        
     lazy var collectionView:UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -35,9 +41,10 @@ class CustomTableViewCell: UITableViewCell {
         return titulo
     }()
     
-    func configure(titulo: String){
+    func configure(delegate: CustomTableViewCellDelegate, titulo: String){
+        self.delegate = delegate
         self.addSubview(self.collectionView)
-        self.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.8)
+        self.backgroundColor = .darkGray
         self.addSubview(labelTitulo)
         self.configConstraints()
         self.configLabelConstraints()
@@ -78,5 +85,9 @@ extension CustomTableViewCell:UICollectionViewDelegate, UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 200, height: 230)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.filmeSelecionado()
     }
 }

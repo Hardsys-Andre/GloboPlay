@@ -14,7 +14,11 @@ class TabBarController: UITabBarController {
         
         return tela1
     }()
-    
+    lazy var tela2: UIViewController = {
+        let tela2 = MinhaListaCollectionView()
+        
+        return tela2
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTabBarController()
@@ -23,7 +27,7 @@ class TabBarController: UITabBarController {
     
     private func setupTabBarController(){
         
-        let tela2 = UINavigationController(rootViewController: tela2())
+        //let tela2 = UINavigationController(rootViewController: tela2())
         self.setViewControllers([tela1, tela2], animated: false)
         self.tabBar.isTranslucent = false
         self.tabBar.tintColor = .white

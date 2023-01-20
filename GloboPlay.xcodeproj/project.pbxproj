@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701DF63D293D122100D5B866 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701DF63C293D122100D5B866 /* SelectorView.swift */; };
+		701DF63F293D362A00D5B866 /* MoreDetailsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701DF63E293D362A00D5B866 /* MoreDetailsCollectionView.swift */; };
+		701DF643293D5CD700D5B866 /* CustomDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701DF642293D5CD700D5B866 /* CustomDetailsCollectionViewCell.swift */; };
 		AC0F570928BD6AB80019A06A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F570828BD6AB80019A06A /* AppDelegate.swift */; };
 		AC0F570B28BD6AB80019A06A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F570A28BD6AB80019A06A /* SceneDelegate.swift */; };
 		AC0F571228BD6AB90019A06A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0F571128BD6AB90019A06A /* Assets.xcassets */; };
 		AC0F571528BD6AB90019A06A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0F571328BD6AB90019A06A /* LaunchScreen.storyboard */; };
 		AC466E4D291C469B008D26F8 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC466E4C291C469B008D26F8 /* MyTabBarController.swift */; };
+		AC6E998B297714B3002A9F95 /* DetalhesAssista.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E998A297714B3002A9F95 /* DetalhesAssista.swift */; };
 		AC8204D828BF8F2F003BA601 /* FilmesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8204D728BF8F2F003BA601 /* FilmesTableView.swift */; };
 		AC8204DA28BF9D3B003BA601 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8204D928BF9D3B003BA601 /* CustomTableViewCell.swift */; };
+		ACB26C432943EE7F00F1B261 /* FichaDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB26C422943EE7F00F1B261 /* FichaDetails.swift */; };
 		ACC4B9D428BE58AE004A007A /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */; };
 		ACCCDEC72936931A00A1341E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCDEC62936931A00A1341E /* DetailsViewController.swift */; };
+		ACF74BF629534DED00454DEA /* MinhaListaCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF74BF529534DED00454DEA /* MinhaListaCollectionView.swift */; };
+		ACF74BF82953529300454DEA /* myListCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF74BF72953529300454DEA /* myListCustomCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		701DF63C293D122100D5B866 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
+		701DF63E293D362A00D5B866 /* MoreDetailsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsCollectionView.swift; sourceTree = "<group>"; };
+		701DF642293D5CD700D5B866 /* CustomDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC0F570528BD6AB80019A06A /* GloboPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloboPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0F570828BD6AB80019A06A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC0F570A28BD6AB80019A06A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,10 +36,14 @@
 		AC0F571428BD6AB90019A06A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC0F571628BD6AB90019A06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC466E4C291C469B008D26F8 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
+		AC6E998A297714B3002A9F95 /* DetalhesAssista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesAssista.swift; sourceTree = "<group>"; };
 		AC8204D728BF8F2F003BA601 /* FilmesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesTableView.swift; sourceTree = "<group>"; };
 		AC8204D928BF9D3B003BA601 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		ACB26C422943EE7F00F1B261 /* FichaDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaDetails.swift; sourceTree = "<group>"; };
 		ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		ACCCDEC62936931A00A1341E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		ACF74BF529534DED00454DEA /* MinhaListaCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhaListaCollectionView.swift; sourceTree = "<group>"; };
+		ACF74BF72953529300454DEA /* myListCustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myListCustomCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +57,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		701DF63A293D11E700D5B866 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				AC6E998929771460002A9F95 /* Detalhes_e_Assista */,
+				701DF63B293D120400D5B866 /* SelectorView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		701DF63B293D120400D5B866 /* SelectorView */ = {
+			isa = PBXGroup;
+			children = (
+				701DF63C293D122100D5B866 /* SelectorView.swift */,
+			);
+			path = SelectorView;
+			sourceTree = "<group>";
+		};
 		AC0F56FC28BD6AB80019A06A = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +93,7 @@
 		AC0F570728BD6AB80019A06A /* GloboPlay */ = {
 			isa = PBXGroup;
 			children = (
+				701DF63A293D11E700D5B866 /* CustomViews */,
 				ACCCDEC52936929300A1341E /* View */,
 				AC466E4B291C4524008D26F8 /* TabBar */,
 				AC8204DE28BFFC12003BA601 /* TableView */,
@@ -83,10 +115,22 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		AC6E998929771460002A9F95 /* Detalhes_e_Assista */ = {
+			isa = PBXGroup;
+			children = (
+				AC6E998A297714B3002A9F95 /* DetalhesAssista.swift */,
+			);
+			path = Detalhes_e_Assista;
+			sourceTree = "<group>";
+		};
 		AC8204DD28BFFBED003BA601 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				ACC4B9D328BE58AE004A007A /* CustomCollectionViewCell.swift */,
+				701DF63E293D362A00D5B866 /* MoreDetailsCollectionView.swift */,
+				701DF642293D5CD700D5B866 /* CustomDetailsCollectionViewCell.swift */,
+				ACF74BF529534DED00454DEA /* MinhaListaCollectionView.swift */,
+				ACF74BF72953529300454DEA /* myListCustomCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -104,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				ACCCDEC62936931A00A1341E /* DetailsViewController.swift */,
+				ACB26C422943EE7F00F1B261 /* FichaDetails.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,12 +223,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701DF63F293D362A00D5B866 /* MoreDetailsCollectionView.swift in Sources */,
 				AC0F570928BD6AB80019A06A /* AppDelegate.swift in Sources */,
+				ACF74BF629534DED00454DEA /* MinhaListaCollectionView.swift in Sources */,
+				701DF63D293D122100D5B866 /* SelectorView.swift in Sources */,
 				AC0F570B28BD6AB80019A06A /* SceneDelegate.swift in Sources */,
 				AC8204DA28BF9D3B003BA601 /* CustomTableViewCell.swift in Sources */,
 				ACC4B9D428BE58AE004A007A /* CustomCollectionViewCell.swift in Sources */,
+				701DF643293D5CD700D5B866 /* CustomDetailsCollectionViewCell.swift in Sources */,
+				ACF74BF82953529300454DEA /* myListCustomCollectionViewCell.swift in Sources */,
 				ACCCDEC72936931A00A1341E /* DetailsViewController.swift in Sources */,
 				AC8204D828BF8F2F003BA601 /* FilmesTableView.swift in Sources */,
+				ACB26C432943EE7F00F1B261 /* FichaDetails.swift in Sources */,
+				AC6E998B297714B3002A9F95 /* DetalhesAssista.swift in Sources */,
 				AC466E4D291C469B008D26F8 /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

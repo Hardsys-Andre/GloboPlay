@@ -34,6 +34,9 @@ class FilmesTableView: UIViewController{
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.isScrollEnabled = true
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .darkGray
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
@@ -45,6 +48,7 @@ class FilmesTableView: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .black
         self.view.addSubview(self.tableView)
         self.view.addSubview(self.topoImageView)
         self.configconstraints()
@@ -98,11 +102,18 @@ extension FilmesTableView: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
-        cell?.configure(titulo: dataSource?.genres[indexPath.row].name ?? "Vazio")
+        cell?.configure(delegate: self, titulo: dataSource?.genres[indexPath.row].name ?? "Vazio")
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
+    }
+}
+
+extension FilmesTableView: CustomTableViewCellDelegate {
+    func filmeSelecionado() {
+        let detailsViewController = DetailsViewController()
+        self.navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
