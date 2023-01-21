@@ -36,7 +36,7 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Vingadores Ultimate"
-        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.font = UIFont.boldSystemFont(ofSize: 25)
         label.textColor = .white
         
         return label
@@ -55,10 +55,11 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate {
     lazy var resumeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Ultimo filme da saga Vingadores\n onde os herois derrotam o vilão\n e salvam a humanidade mais \n uma vez"
-        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.text = "Ultimo filme da saga Vingadores onde\n os herois derrotam o vilão e salvam\n a humanidade mais uma vez"
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = UIColor(white: 1, alpha: 0.5)
         label.numberOfLines = 0
+        label.textAlignment = .center
         
         return label
     }()
@@ -134,7 +135,6 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate {
     lazy var selectorView: SelectorView = {
         let selector = SelectorView()
         selector.translatesAutoresizingMaskIntoConstraints = false
-        
         return selector
     }()
 
@@ -209,23 +209,23 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate {
             
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            self.imageDetails.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 50),
+            self.imageDetails.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 4),
             self.imageDetails.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-            self.imageDetails.heightAnchor.constraint(equalToConstant: 250),
-            self.imageDetails.widthAnchor.constraint(equalToConstant: 180),
+            self.imageDetails.heightAnchor.constraint(equalToConstant: 200),
+            self.imageDetails.widthAnchor.constraint(equalToConstant: 150),
             
-            self.titleLabel.topAnchor.constraint(equalTo: self.imageDetails.bottomAnchor, constant:20),
+            self.titleLabel.topAnchor.constraint(equalTo: self.imageDetails.bottomAnchor, constant:10),
             self.titleLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-            self.titleLabel.heightAnchor.constraint(equalToConstant: 30),
+            self.titleLabel.heightAnchor.constraint(equalToConstant: 25),
             
-            self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 20),
+            self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 10),
             self.subtitleLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-            self.subtitleLabel.heightAnchor.constraint(equalToConstant: 30),
+            self.subtitleLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            self.resumeLabel.topAnchor.constraint(equalTo: self.subtitleLabel.bottomAnchor, constant: 20),
+            self.resumeLabel.topAnchor.constraint(equalTo: self.subtitleLabel.bottomAnchor, constant: 10),
             self.resumeLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             
-            self.stackView.topAnchor.constraint(equalTo: self.resumeLabel.bottomAnchor, constant: 20),
+            self.stackView.topAnchor.constraint(equalTo: self.resumeLabel.bottomAnchor, constant: 10),
             self.stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
             self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
             self.stackView.heightAnchor.constraint(equalToConstant: 50),
@@ -249,9 +249,9 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate {
             self.selectorView.topAnchor.constraint(equalTo: self.stackView.bottomAnchor, constant: 10),
             self.selectorView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
             self.selectorView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16),
-            self.selectorView.heightAnchor.constraint(equalToConstant: 80),
+            self.selectorView.heightAnchor.constraint(equalToConstant: 60),
             
-            self.detalhesAssista.topAnchor.constraint(equalTo: self.selectorView.bottomAnchor, constant: 20),
+            self.detalhesAssista.topAnchor.constraint(equalTo: self.selectorView.bottomAnchor, constant: 0),
             self.detalhesAssista.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 6),
             self.detalhesAssista.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -6),
             self.detalhesAssista.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),

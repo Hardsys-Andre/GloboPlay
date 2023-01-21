@@ -14,6 +14,7 @@
 		AC0F570B28BD6AB80019A06A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F570A28BD6AB80019A06A /* SceneDelegate.swift */; };
 		AC0F571228BD6AB90019A06A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0F571128BD6AB90019A06A /* Assets.xcassets */; };
 		AC0F571528BD6AB90019A06A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0F571328BD6AB90019A06A /* LaunchScreen.storyboard */; };
+		AC1DAE21297B579D004BF0E3 /* PlayerYoutube.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DAE20297B579D004BF0E3 /* PlayerYoutube.swift */; };
 		AC466E4D291C469B008D26F8 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC466E4C291C469B008D26F8 /* MyTabBarController.swift */; };
 		AC6E998B297714B3002A9F95 /* DetalhesAssista.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E998A297714B3002A9F95 /* DetalhesAssista.swift */; };
 		AC8204D828BF8F2F003BA601 /* FilmesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8204D728BF8F2F003BA601 /* FilmesTableView.swift */; };
@@ -35,6 +36,7 @@
 		AC0F571128BD6AB90019A06A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC0F571428BD6AB90019A06A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC0F571628BD6AB90019A06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC1DAE20297B579D004BF0E3 /* PlayerYoutube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerYoutube.swift; sourceTree = "<group>"; };
 		AC466E4C291C469B008D26F8 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		AC6E998A297714B3002A9F95 /* DetalhesAssista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesAssista.swift; sourceTree = "<group>"; };
 		AC8204D728BF8F2F003BA601 /* FilmesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesTableView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		AC0F570728BD6AB80019A06A /* GloboPlay */ = {
 			isa = PBXGroup;
 			children = (
+				AC1DAE1F297B5773004BF0E3 /* PlayerYoutube */,
 				701DF63A293D11E700D5B866 /* CustomViews */,
 				ACCCDEC52936929300A1341E /* View */,
 				AC466E4B291C4524008D26F8 /* TabBar */,
@@ -105,6 +108,14 @@
 				AC0F571628BD6AB90019A06A /* Info.plist */,
 			);
 			path = GloboPlay;
+			sourceTree = "<group>";
+		};
+		AC1DAE1F297B5773004BF0E3 /* PlayerYoutube */ = {
+			isa = PBXGroup;
+			children = (
+				AC1DAE20297B579D004BF0E3 /* PlayerYoutube.swift */,
+			);
+			path = PlayerYoutube;
 			sourceTree = "<group>";
 		};
 		AC466E4B291C4524008D26F8 /* TabBar */ = {
@@ -231,6 +242,7 @@
 				AC8204DA28BF9D3B003BA601 /* CustomTableViewCell.swift in Sources */,
 				ACC4B9D428BE58AE004A007A /* CustomCollectionViewCell.swift in Sources */,
 				701DF643293D5CD700D5B866 /* CustomDetailsCollectionViewCell.swift in Sources */,
+				AC1DAE21297B579D004BF0E3 /* PlayerYoutube.swift in Sources */,
 				ACF74BF82953529300454DEA /* myListCustomCollectionViewCell.swift in Sources */,
 				ACCCDEC72936931A00A1341E /* DetailsViewController.swift in Sources */,
 				AC8204D828BF8F2F003BA601 /* FilmesTableView.swift in Sources */,

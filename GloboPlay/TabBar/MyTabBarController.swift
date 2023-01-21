@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
         return tela1
     }()
     lazy var tela2: UIViewController = {
-        let tela2 = MinhaListaCollectionView()
+        let tela2 = PlayerYoutube()
         
         return tela2
     }()

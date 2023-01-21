@@ -140,7 +140,7 @@ class SelectorView: UIView {
             self.stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             self.stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             self.stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            self.stackView.heightAnchor.constraint(equalToConstant: 50),
+            self.stackView.heightAnchor.constraint(equalToConstant: 40),
             
             self.selectorAssistaLabel.centerYAnchor.constraint(equalTo: buttomLeftView.centerYAnchor),
             self.selectorAssistaLabel.leadingAnchor.constraint(equalTo: buttomLeftView.leadingAnchor),
@@ -148,13 +148,13 @@ class SelectorView: UIView {
             self.selectorDetailsLabel.centerYAnchor.constraint(equalTo: buttomRightView.centerYAnchor),
             self.selectorDetailsLabel.leadingAnchor.constraint(equalTo: buttomRightView.leadingAnchor),
         
-                self.barView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 12),
+                self.barView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 6),
                 self.barView.widthAnchor.constraint(equalToConstant: 120),
                 self.barView.heightAnchor.constraint(equalToConstant: 5),
                 self.barView.centerXAnchor.constraint(equalTo: selectorDetailsLabel.centerXAnchor),
 
-                self.barViewAssista.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 12),
-                self.barViewAssista.widthAnchor.constraint(equalToConstant: 120),
+                self.barViewAssista.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 6),
+                self.barViewAssista.widthAnchor.constraint(equalToConstant: 180),
                 self.barViewAssista.heightAnchor.constraint(equalToConstant: 5),
                 self.barViewAssista.centerXAnchor.constraint(equalTo: selectorAssistaLabel.centerXAnchor)
 

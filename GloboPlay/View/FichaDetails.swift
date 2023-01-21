@@ -14,7 +14,7 @@ class FichaDetails: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Ficha técnica"
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.font = UIFont.boldSystemFont(ofSize: 22)
         
         return label
     }()
@@ -43,11 +43,11 @@ class FichaDetails: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            self.titleFicha.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+            self.titleFicha.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             self.titleFicha.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             self.titleFicha.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
             
-            self.descricaoLabel.topAnchor.constraint(equalTo: self.titleFicha.bottomAnchor, constant: 20),
+            self.descricaoLabel.topAnchor.constraint(equalTo: self.titleFicha.bottomAnchor, constant: 10),
             self.descricaoLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             self.descricaoLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
         ])
