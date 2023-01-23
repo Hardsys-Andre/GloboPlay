@@ -7,7 +7,29 @@
 
 import UIKit
 
+protocol playYoutubeDelegate: AnyObject {
+    func tappedPlayYoutube()
+}
+
 class DetailsViewController: UIViewController, detalhesAssistaDelegate {
+    
+    private weak var delegateYoutube: playYoutubeDelegate?
+    
+    public func delegateYoutube(delegate: playYoutubeDelegate?){
+        self.delegateYoutube = delegate
+    }
+    
+    lazy var backImageButton: UIButton = {
+        let button = UIButton()
+        button .translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "Botão Back.png"), for: .normal)
+        button.addTarget(self, action: #selector(tappedBack), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func tappedBack(){
+        navigationController?.popViewController(animated: true)
+    }
 
     lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
@@ -66,11 +88,19 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate {
     
     lazy var buttomLeftView: UIView = {
         let view = UIView()
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedPlayerYoutube))
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.layer.cornerRadius = 5
+        view.addGestureRecognizer(gesture)
         return view
     }()
+    
+    @objc func tappedPlayerYoutube(_ sender: UITapGestureRecognizer){
+        self.delegateYoutube?.tappedPlayYoutube()
+        let playerYoutubeController = PlayerYoutube()
+        self.navigationController?.pushViewController(playerYoutubeController, animated: true)
+    }
     
     lazy var playImage: UIImageView = {
         let image = UIImageView()
@@ -94,13 +124,27 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate {
     
     lazy var buttomRightView: UIView = {
         let view = UIView()
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(tappedFavoritar))
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.borderColor = UIColor.white.cgColor
         view.layer.borderWidth = 1
         view.layer.cornerRadius = 5
+        view.addGestureRecognizer(recognizer)
         
         return view
     }()
+    
+    @objc func tappedFavoritar(){
+        trocarFavoritos()
+    }
+    
+    public func trocarFavoritos(){
+        let labelRight = nameButtomRight
+        labelRight.text = "Adicionado"
+        let check = starImage
+        check.image = UIImage(named: "White_check")
+        
+    }
     
     lazy var starImage: UIImageView = {
         let image = UIImageView()
@@ -150,6 +194,7 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate {
         selectorView.delegate(delegate: self)
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
+        contentView.addSubview(backImageButton)
         contentView.addSubview(imageDetails)
         contentView.addSubview(titleLabel)
         contentView.addSubview(subtitleLabel)
@@ -209,7 +254,11 @@ class DetailsViewController: UIViewController, detalhesAssistaDelegate {
             
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            self.imageDetails.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 4),
+            self.backImageButton.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 4),
+            self.backImageButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
+            self.backImageButton.heightAnchor.constraint(equalToConstant: 45),
+            
+            self.imageDetails.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 25),
             self.imageDetails.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             self.imageDetails.heightAnchor.constraint(equalToConstant: 200),
             self.imageDetails.widthAnchor.constraint(equalToConstant: 150),

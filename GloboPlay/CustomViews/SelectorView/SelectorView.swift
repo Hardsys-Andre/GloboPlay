@@ -45,17 +45,27 @@ class SelectorView: UIView {
     @objc func tappedAssistaTB(_ sender: UITapGestureRecognizer){
         delegate?.tappedAssista()
         delegate?.tappedBarra()
+        trocarLabel()
+        
     }
     
     lazy var selectorAssistaLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "ASSISTA TAMBÉM"
-        label.textColor = .white
+        label.textColor = .darkGray
         label.font = UIFont.boldSystemFont(ofSize: 20)
 
         return label
     }()
+    
+    public func trocarLabel(){
+        let labelAssista = selectorAssistaLabel
+        labelAssista.textColor = .white
+        
+        let labelDetalhes = selectorDetailsLabel
+        labelDetalhes.textColor = .darkGray
+    }
     
     lazy var buttomRightView: UIView = {
         let view = UIView()
@@ -70,6 +80,7 @@ class SelectorView: UIView {
     @objc func tappedDetalhesExibir(_ sender: UITapGestureRecognizer){
         delegate?.tappedDetalhes()
         delegate?.tappedBarraDetalhes()
+        trocarLabelDetalhes()
     }
     
     lazy var selectorDetailsLabel: UILabel = {
@@ -81,6 +92,14 @@ class SelectorView: UIView {
 
         return label
     }()
+    
+    public func trocarLabelDetalhes(){
+        let labelAssista = selectorAssistaLabel
+        labelAssista.textColor = .darkGray
+        
+        let labelDetalhes = selectorDetailsLabel
+        labelDetalhes.textColor = .white
+    }
     
     lazy var barView: UIView = {
         let view = UIView()

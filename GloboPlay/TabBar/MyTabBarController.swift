@@ -15,10 +15,15 @@ class TabBarController: UITabBarController {
         return tela1
     }()
     lazy var tela2: UIViewController = {
-        let tela2 = PlayerYoutube()
+        let tela2 = MinhaListaCollectionView()
         
         return tela2
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTabBarController()
@@ -46,10 +51,4 @@ class TabBarController: UITabBarController {
 
 }
 
-class tela2:UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .red
-        self.title = "Favoritos"
-    }
-}
+

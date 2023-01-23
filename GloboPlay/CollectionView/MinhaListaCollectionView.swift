@@ -46,7 +46,7 @@ class MinhaListaCollectionView: UIViewController {
     private func configConstraints(){
         NSLayoutConstraint.activate([
             
-            self.titleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 60),
+            self.titleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50),
             self.titleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
             self.titleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10),
             self.titleLabel.heightAnchor.constraint(equalToConstant: 35),
