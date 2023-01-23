@@ -28,7 +28,7 @@ class MinhaListaCollectionView: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isScrollEnabled = true
-        collectionView.backgroundColor = .darkGray
+        collectionView.backgroundColor = UIColor(red: 28/255, green: 28/255, blue: 28/255, alpha: 1.0)
         collectionView.register(myListCustomCollectionViewCell.self, forCellWithReuseIdentifier: myListCustomCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
 

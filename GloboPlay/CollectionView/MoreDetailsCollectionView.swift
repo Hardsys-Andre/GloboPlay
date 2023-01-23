@@ -27,7 +27,7 @@ class MoreDetailsCollectionView: UIView {
     
     init() {
         super.init(frame: .zero)
-        backgroundColor = .darkGray
+        backgroundColor = UIColor(red: 28/255, green: 28/255, blue: 28/255, alpha: 1.0)
         addSubview(collectionView)
         configConstraints()
     }

@@ -14,9 +14,8 @@ class myListCustomCollectionViewCell: UICollectionViewCell {
     
     lazy var imageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "Druid")
+        imageView.image = UIImage(named: "cartaz")
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .gray
         
         return imageView
     }()

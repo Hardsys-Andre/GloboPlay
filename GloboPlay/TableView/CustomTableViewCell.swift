@@ -44,7 +44,7 @@ class CustomTableViewCell: UITableViewCell {
     func configure(delegate: CustomTableViewCellDelegate, titulo: String){
         self.delegate = delegate
         self.addSubview(self.collectionView)
-        self.backgroundColor = .darkGray
+        self.backgroundColor = UIColor(red: 28/255, green: 28/255, blue: 28/255, alpha: 1.0)
         self.addSubview(labelTitulo)
         self.configConstraints()
         self.configLabelConstraints()
